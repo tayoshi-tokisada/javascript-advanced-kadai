@@ -1,5 +1,5 @@
 // dataの取得
-import data from './json/data.json' assert {type: 'json'};
+import data from '../json/data.json' with {type: 'json'};
 
 // 変数宣言
 let untyped;
@@ -9,9 +9,9 @@ const untypedField = document.getElementById('untyped')
 
 // ランダムなテキストを表示
 const createText = () => {
-  // 0 ~ textLists.length-1 のランダムな数値を生成する
-  let randomNum = Math.floor(Math.random() * textLists.length);
-  // textListsの内容をテキストに表示
+  // 0 ~ textList.length-1 のランダムな数値を生成する
+  let randomNum = Math.floor(Math.random() * data.textList.length);
+  // textListの内容をテキストに表示
   untyped = data.textList[randomNum];
   untypedField.textContent = untyped;
 };
