@@ -1,13 +1,24 @@
 // sub.jsの取得
-import { createText
-        , keyPress
-        , rankCheck
-        , gameOver
-        , timer 
-} from './sub.js';
+import { createText,
+        keyPress,
+        countdown,
+        init
+} from "./sub.js";
 
-// 一番初めのテキストを表示
-createText();
+// HTML要素の取得
+const start = document.getElementById("start");
 
-// キーボードのイベント処理
-document.addEventListener('keypress', keyPress);
+// 初期表示
+init();
+
+// スタートボタン押下時の処理
+start.addEventListener("click", () => {
+  // カウントダウンを開始
+  countdown();
+  // テキストの表示
+  createText();
+  // スタートボタンを非表示
+  start.style.display = "none";
+  // キー入力時のイベント処理を追加
+  document.addEventListener("keypress", keyPress);
+});
