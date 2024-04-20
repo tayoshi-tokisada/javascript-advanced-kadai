@@ -43,8 +43,15 @@ const gameOver = (timer) => {
   clearInterval(timer);
   // ランク判定処理
   rankCheck();
-  // rankTextをダイアログで表示
-  const result = confirm(rankText);
+  // テキストをtimeupTextに更新
+  typedField.textContent = "";
+  untypedField.textContent = data.timeupText;
+  // １０ミリ秒後
+  setTimeout(() => {
+    // rankTextをダイアログで表示
+    const result = confirm(rankText);
+  }, 10);
+
   // OKボタンがクリックされたらリロードする
   if(result == true){
     window.location.reload();
@@ -56,25 +63,16 @@ const countdown = () => {
   // countから現在のカウントを取得
   let currentCount = count.textContent;
 
-  // ゲーム終了時テキストをtimeupTextに更新
-  setTimeout(() => {
-    typedField.textContent = "";
-    untypedField.textContent = data.timeupText;
-  }, data.startCount * 1000);
+  // タイマーをセット
+  const timer = setInterval(() => {
+    // カウントダウンする
+    currentCount--;
+    count.textContent = currentCount;
 
-  // ↑のタイマー終了時の処理が先に動くように遅延をかける
-  setTimeout(() => {
-    // タイマーをセット
-    const timer = setInterval(() => {
-      // カウントダウンする
-      currentCount--;
-      count.textContent = currentCount;
-
-      // カウントが0になったらタイマーを停止する
-      if(currentCount <= 0){
-        // ゲーム終了処理
-        gameOver(timer);
-      }
-    }, 1000);
-  }, 50);
+    // カウントが0になったらタイマーを停止する
+    if(currentCount <= 0){
+      // ゲーム終了処理
+      gameOver(timer);
+    }
+  }, 1000);
 };
