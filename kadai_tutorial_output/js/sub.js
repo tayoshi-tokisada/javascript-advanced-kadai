@@ -1,6 +1,3 @@
-// dataの取得
-import data from "../json/data.json" with {type: "json"};
-
 // 変数宣言
 let untyped = "";
 let typed = "";
@@ -14,7 +11,7 @@ const wrap = document.getElementById("wrap");
 const count = document.getElementById("count");
 
 // 初期表示処理
-export const init = () => {
+const init = () => {
   // カウントの初期表示
   count.textContent = data.startCount;
   // テキストの初期表示
@@ -22,7 +19,7 @@ export const init = () => {
 };
 
 // テキスト表示処理
-export const createText = () => {
+const createText = () => {
   // 入力済みを空にする
   typed = "";
   typedField.textContent = typed;
@@ -34,7 +31,7 @@ export const createText = () => {
 };
 
 // キー入力判定処理
-export const keyPress = e => {
+const keyPress = (e) => {
   // タイプミスの場合
   if(e.key !== untyped.substring(0, 1)){
     // wrapをミスタイプ仕様にする(100ms)
@@ -61,7 +58,7 @@ export const keyPress = e => {
 };
 
 // ランク判定処理
-export const rankCheck = () => {
+const rankCheck = () => {
   // rankTextを初期化
   rankText = "";
   // スコアに応じて異なるメッセージをrankTextに格納する
@@ -80,7 +77,7 @@ export const rankCheck = () => {
 };
 
 // ゲーム終了処理
-export const gameOver = (timer) => {
+const gameOver = (timer) => {
   // タイマー停止
   clearInterval(timer);
   // ランク判定処理
@@ -94,7 +91,7 @@ export const gameOver = (timer) => {
 };
 
 // カウントダウン処理
-export const countdown = () => {
+const countdown = () => {
   // countから現在のカウントを取得
   let currentCount = count.textContent;
 

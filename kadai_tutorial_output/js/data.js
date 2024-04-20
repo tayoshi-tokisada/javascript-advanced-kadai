@@ -1,3 +1,4 @@
+const data =
 {
   "startCount":60,
   "startText":"スタートボタンで開始",
@@ -39,4 +40,4 @@
     "Windows Mac Linux iOS Android",
     "programming"
   ]
-}
+};
