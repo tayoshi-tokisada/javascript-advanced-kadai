@@ -1,3 +1,18 @@
+// 変数宣言
+let untyped = "";
+let typed = "";
+let score = 0;
+let rankText = "";
+
+// HTML要素の取得
+const untypedField = document.getElementById("untyped");
+const typedField = document.getElementById("typed");
+const wrap = document.getElementById("wrap");
+const count = document.getElementById("count");
+const start = document.getElementById("start");
+const typeCount =document.getElementById("typeCount");
+
+// 定数dataを宣言
 const data =
 {
   "startCount":60,
