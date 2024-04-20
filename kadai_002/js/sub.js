@@ -101,17 +101,25 @@ export const countdown = () => {
   // countから現在のカウントを取得
   let currentCount = count.textContent;
 
-  // タイマーをセット
-  const timer = setInterval(() => {
-    // カウントダウンする
-    currentCount--;
-    count.textContent = currentCount;
+  // ゲーム終了時テキストをtimeupTextに更新
+  setTimeout(() => {
+    typedField.textContent = "";
+    untypedField.textContent = data.timeupText;
+  }, data.startCount * 1000);
 
-    // カウントが0になったらタイマーを停止する
-    if(currentCount <= 0){
-      // ゲーム終了処理
-      gameOver(timer);
-    }
-  }, 1000);
+  // ↑のタイマー終了時の処理が先に動くように遅延をかける
+  setTimeout(() => {
+    // タイマーをセット
+    const timer = setInterval(() => {
+      // カウントダウンする
+      currentCount--;
+      count.textContent = currentCount;
 
+      // カウントが0になったらタイマーを停止する
+      if(currentCount <= 0){
+        // ゲーム終了処理
+        gameOver(timer);
+      }
+    }, 1000);
+  }, 50);
 };

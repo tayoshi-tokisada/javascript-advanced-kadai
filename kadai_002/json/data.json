@@ -7,6 +7,7 @@
   "sRankText":"文字打てました!\nあなたのランクはSです。\nおめでとうございます！",
   "rankText2":"文字です。\n【OK】リトライ / 【キャンセル】終了",
   "rankText3":"\n【OK】リトライ / 【キャンセル】終了",
+  "timeupText":"タイムアップ！",
   "textList":[
     "Hello World",
     "This is my App",
