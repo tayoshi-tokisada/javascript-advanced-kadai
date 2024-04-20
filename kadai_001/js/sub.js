@@ -12,6 +12,7 @@ const untypedField = document.getElementById("untyped");
 const typedField = document.getElementById("typed");
 const wrap = document.getElementById("wrap");
 const count = document.getElementById("count");
+const typeCount = document.getElementById("typeCount");
 
 // 初期表示処理
 export const init = () => {
@@ -53,6 +54,8 @@ export const keyPress = e => {
   untyped = untyped.substring(1);
   typedField.textContent = typed;
   untypedField.textContent = untyped;
+  // タイプ数表示更新
+  typeCount.textContent = score;
 
   // 未入力がなくなったらテキストを新しく
   if(untyped === ""){

@@ -25,3 +25,10 @@ body{
 .mistyped{
   background-color: red;
 }
+/* タイプ数表示 */
+.typeCount{
+  display: none;
+  margin: 0;
+  font-weight: bold;
+  color: #888;
+}
