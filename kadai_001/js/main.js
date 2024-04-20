@@ -1,10 +1,3 @@
-// sub.jsの取得
-import { createText,
-        keyPress,
-        countdown,
-        init
-} from "./sub.js";
-
 // HTML要素の取得
 const start = document.getElementById("start");
 const typeCount =document.getElementById("typeCount");
